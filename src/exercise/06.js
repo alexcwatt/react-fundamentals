@@ -25,7 +25,10 @@ function UsernameForm({onSubmitUsername}) {
         <label htmlFor="username">Username:</label>
         <input onChange={handleUsernameChange} ref={usernameRef} id="username" type="text" />
       </div>
-      <button type="submit" disabled={error !== null}>Submit</button>
+      <div role="alert" style={{color: 'red'}}>
+        {error}
+      </div>
+      <button type="submit" disabled={Boolean(error)}>Submit</button>
     </form>
   )
 }
